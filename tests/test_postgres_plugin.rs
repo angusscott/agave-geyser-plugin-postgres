@@ -27,7 +27,7 @@ use {
     log::*,
     serial_test::serial,
     solana_core::validator::ValidatorConfig,
-    solana_geyser_plugin_postgres::{
+    agave_geyser_plugin_postgres::{
         geyser_plugin_postgres::GeyserPluginPostgresConfig, postgres_client::SimplePostgresClient,
     },
     solana_local_cluster::{
@@ -200,7 +200,6 @@ fn setup_snapshot_validator_config(
         account_paths: account_storage_paths,
         accounts_hash_interval_slots: snapshot_interval_slots,
         on_start_geyser_plugin_config_files,
-        enforce_ulimit_nofile: false,
         ..ValidatorConfig::default()
     };
 
@@ -216,13 +215,11 @@ fn setup_snapshot_validator_config(
 fn test_local_cluster_start_and_exit_with_config(socket_addr_space: SocketAddrSpace) {
     const NUM_NODES: usize = 1;
     let config = ValidatorConfig {
-        enforce_ulimit_nofile: false,
         ..ValidatorConfig::default()
     };
     let mut config = ClusterConfig {
         validator_configs: make_identical_validator_configs(&config, NUM_NODES),
         node_stakes: vec![3; NUM_NODES],
-        cluster_lamports: 100,
         ticks_per_slot: 8,
         slots_per_epoch: MINIMUM_SLOTS_PER_EPOCH,
         stakers_slot_offset: MINIMUM_SLOTS_PER_EPOCH,
@@ -287,7 +284,6 @@ fn test_postgres_plugin() {
     let stake = 10_000;
     let mut config = ClusterConfig {
         node_stakes: vec![stake],
-        cluster_lamports: 1_000_000,
         validator_configs: make_identical_validator_configs(
             &leader_snapshot_test_config.validator_config,
             1,
@@ -305,7 +301,6 @@ fn test_postgres_plugin() {
         contact_info,
         leader_snapshot_test_config
             .validator_config
-            .enforce_ulimit_nofile
     );
 
     // Get slot after which this was generated
