@@ -46,6 +46,7 @@ solana-core = { version = "2.1.16" }
 solana-local-cluster = { version = "2.1.16" }
 solana-net-utils = { version = "2.1.16" }
 solana-streamer = { version = "2.1.16" }
+solana-accounts-db = { version = "=2.1.16" }
 tempfile = "3.13.0"
 
 [package.metadata.docs.rs]
