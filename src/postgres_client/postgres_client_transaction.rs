@@ -415,8 +415,7 @@ impl From<&TransactionError> for DbTransactionErrorCode {
             TransactionError::ProgramExecutionTemporarilyRestricted { account_index: _ } => {
                 Self::ProgramExecutionTemporarilyRestricted
             }
-            TransactionError::ProgramCacheHitMaxLimit => Self::ProgramCacheHitMaxLimit,
-            TransactionError::CommitCancelled => Self::CommitCancelled
+            TransactionError::ProgramCacheHitMaxLimit => Self::ProgramCacheHitMaxLimit
         }
     }
 }
