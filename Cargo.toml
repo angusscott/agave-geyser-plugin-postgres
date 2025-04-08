@@ -3,7 +3,7 @@ authors = ["Solana Maintainers <maintainers@solana.foundation>"]
 edition = "2021"
 name = "agave-geyser-plugin-postgres"
 description = "The Solana AccountsDb plugin for PostgreSQL database."
-version = "2.1.16"
+version = "2.1.18"
 repository = "https://github.com/anza-xyz/agave-geyser-plugin-postgres"
 license = "Apache-2.0"
 homepage = "https://solana.com/"
@@ -25,13 +25,13 @@ postgres-openssl = { version = "0.5.0"}
 serde = "1.0.213"
 serde_derive = "1.0.213"
 serde_json = "1.0.132"
-agave-geyser-plugin-interface = { version = "=2.1.16" }
-solana-logger = { version = "=2.1.16" }
-solana-measure = { version = "=2.1.16" }
-solana-metrics = { version = "=2.1.16" }
-solana-runtime = { version = "=2.1.16" }
-solana-sdk = { version = "=2.1.16" }
-solana-transaction-status = { version = "=2.1.16" }
+agave-geyser-plugin-interface = { version = "=2.1.18" }
+solana-logger = { version = "=2.1.18" }
+solana-measure = { version = "=2.1.18" }
+solana-metrics = { version = "=2.1.18" }
+solana-runtime = { version = "=2.1.18" }
+solana-sdk = { version = "=2.1.18" }
+solana-transaction-status = { version = "=2.1.18" }
 thiserror = "1.0.65"
 tokio-postgres = "0.7.7"
 
@@ -41,12 +41,12 @@ libloading = "0.7.4"
 serial_test = "2.0.0"
 socket2 = { version = "0.5.7", features = ["all"] }
 
-solana-account-decoder = { version = "=2.1.16" }
-solana-core = { version = "=2.1.16" }
-solana-local-cluster = { version = "=2.1.16" }
-solana-net-utils = { version = "=2.1.16" }
-solana-streamer = { version = "=2.1.16" }
-solana-accounts-db = { version = "=2.1.16" }
+solana-account-decoder = { version = "=2.1.18" }
+solana-core = { version = "=2.1.18" }
+solana-local-cluster = { version = "=2.1.18" }
+solana-net-utils = { version = "=2.1.18" }
+solana-streamer = { version = "=2.1.18" }
+solana-accounts-db = { version = "=2.1.18" }
 tempfile = "3.13.0"
 
 [package.metadata.docs.rs]
